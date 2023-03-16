@@ -9,7 +9,12 @@ public class PersistentSingleton<T> : MonoBehaviour where T : Component
     // Start is called before the first frame update
     void Start()
     {
-        if (instance == null)
+        Singleton();
+    }
+    
+    public void Singleton()
+    {
+            if (instance == null)
         {
             if (!TryGetComponent<T>(out instance))
             {
