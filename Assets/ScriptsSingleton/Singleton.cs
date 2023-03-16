@@ -10,7 +10,11 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
+        Singleton();
+    }
+    
+    void Singleton(){
+          if(instance == null)
         {
             if(!TryGetComponent<T>(out instance))
             {
@@ -21,4 +25,4 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
             Destroy(gameObject);
         }
     }
-}
+    }
